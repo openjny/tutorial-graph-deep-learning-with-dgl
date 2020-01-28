@@ -1,0 +1,16 @@
+version: '3'
+services:
+  jupyter-notebook:
+    build: .
+    user: root
+    environment:
+      NB_UID: 1000
+      NB_GID: 100
+      GRANT_SUDO: "yes"
+    volumes:
+       - ".:/home/jovyan/work"
+    privileged: true
+    ports:
+      - "8888:8888"
+    restart: unless-stopped
+    command: start.sh jupyter lab --NotebookApp.token=''
