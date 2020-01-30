@@ -5,3 +5,4 @@ USER root
 USER $NB_UID
 RUN conda install pytorch torchvision cpuonly -c pytorch
 RUN conda install -c dglteam dgl
+RUN conda install -c conda-forge umap-learn
